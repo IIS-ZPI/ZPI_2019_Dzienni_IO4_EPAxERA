@@ -11,6 +11,8 @@ public class MultiplicaionImpl implements Multipliable{
     //CHILLWAGON CHILLWAGON
 
     // Dawid commit 1 - cp
+
+    //KUKU LELE
 }
 
 //Kamil comm 3
