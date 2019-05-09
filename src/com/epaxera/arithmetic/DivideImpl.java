@@ -6,6 +6,7 @@ public class DivideImpl implements Dividable {
         if (b == 0) {
             throw new IllegalArgumentException();
         } else {
+            //Sixth comment
             return a / b;
         }
 
