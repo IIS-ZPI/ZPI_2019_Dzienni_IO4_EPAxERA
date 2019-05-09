@@ -8,3 +8,5 @@ public class DifferenceImpl implements Differenciable{
         return 0;
     }
 }
+
+//Kamil comm2
