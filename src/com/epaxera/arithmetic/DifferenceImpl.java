@@ -9,6 +9,8 @@ public class DifferenceImpl implements Differenciable{
     }
 
     // trzeci komentarz - dawikk - cp
+
+    // BARTEK COMMENT
 }
 
 //Kamil comm2
