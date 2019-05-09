@@ -8,4 +8,6 @@ public class MultiplicaionImpl implements Multipliable{
         return a * b;
     }
     //CHILLWAGON CHILLWAGON
+
+    // Dawid commit 1 - cp
 }
