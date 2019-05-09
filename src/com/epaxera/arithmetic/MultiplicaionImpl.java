@@ -1,6 +1,9 @@
 package com.epaxera.arithmetic;
 
 public class MultiplicaionImpl implements Multipliable{
+    // patryk - pierwszy komentarz
+
+    // drugi komentarz - dawikk
     @Override
     public double multiplication(double a, double b) {
         return a * b;
