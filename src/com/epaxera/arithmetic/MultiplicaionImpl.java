@@ -9,3 +9,5 @@ public class MultiplicaionImpl implements Multipliable{
     }
     //CHILLWAGON CHILLWAGON
 }
+
+//Kamil comm 3
