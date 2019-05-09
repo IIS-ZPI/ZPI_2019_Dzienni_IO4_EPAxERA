@@ -5,4 +5,5 @@ public class MultiplicaionImpl implements Multipliable{
     public double multiplication(double a, double b) {
         return a * b;
     }
+    //CHILLWAGON CHILLWAGON
 }
