@@ -11,4 +11,5 @@ public class DivideImpl implements Dividable {
         }
 
     }
+    //Dawid zrobil kalkulator w minecrafcie x + d
 }
