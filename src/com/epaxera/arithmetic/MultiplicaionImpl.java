@@ -9,6 +9,4 @@ public class MultiplicaionImpl implements Multipliable{
         return a * b;
     }
     //CHILLWAGON CHILLWAGON
-
-    // komentarz do zrevertowania - Patryk
 }
