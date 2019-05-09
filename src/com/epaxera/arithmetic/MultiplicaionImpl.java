@@ -8,4 +8,6 @@ public class MultiplicaionImpl implements Multipliable{
         return a * b;
     }
     //CHILLWAGON CHILLWAGON
+
+    //KUKU LELE 
 }
