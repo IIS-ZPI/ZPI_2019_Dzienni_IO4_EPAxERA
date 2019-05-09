@@ -5,6 +5,7 @@ public class MultiplicaionImpl implements Multipliable{
     // drugi komentarz - dawikk
     @Override
     public double multiplication(double a, double b) {
+        //Komentarz do zrevetowania -- Kamil
         return a * b;
     }
     //CHILLWAGON CHILLWAGON
