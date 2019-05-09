@@ -12,3 +12,5 @@ public class MultiplicaionImpl implements Multipliable{
 
     // Dawid commit 1 - cp
 }
+
+//Kamil comm 3
