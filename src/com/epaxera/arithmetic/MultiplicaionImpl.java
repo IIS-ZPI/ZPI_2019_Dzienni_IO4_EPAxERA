@@ -1,6 +1,7 @@
 package com.epaxera.arithmetic;
 
 public class MultiplicaionImpl implements Multipliable{
+    // patryk - pierwszy komentarz
 
     // drugi komentarz - dawikk
     @Override
@@ -8,4 +9,10 @@ public class MultiplicaionImpl implements Multipliable{
         return a * b;
     }
     //CHILLWAGON CHILLWAGON
+
+    // Dawid commit 1 - cp
+
+    //KUKU LELE
 }
+
+//Kamil comm 3
