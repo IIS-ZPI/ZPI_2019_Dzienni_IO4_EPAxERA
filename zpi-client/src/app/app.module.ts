@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HomeComponent } from './components/home/home.component';
+import { TestGraphComponent } from './components/test-graph/test-graph.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    TestGraphComponent
   ],
   imports: [
     BrowserModule,
