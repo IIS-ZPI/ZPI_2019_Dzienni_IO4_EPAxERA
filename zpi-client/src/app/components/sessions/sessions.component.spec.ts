@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CurrentDecayComponent } from './current-decay.component';
+import { SessionsComponent } from './sessions.component';
 
-describe('CurrentDecayComponent', () => {
-  let component: CurrentDecayComponent;
-  let fixture: ComponentFixture<CurrentDecayComponent>;
+describe('SessionsComponent', () => {
+  let component: SessionsComponent;
+  let fixture: ComponentFixture<SessionsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CurrentDecayComponent ]
+      declarations: [ SessionsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CurrentDecayComponent);
+    fixture = TestBed.createComponent(SessionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

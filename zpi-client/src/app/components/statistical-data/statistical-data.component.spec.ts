@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CurrentDecayComponent } from './current-decay.component';
+import { StatisticalDataComponent } from './statistical-data.component';
 
-describe('CurrentDecayComponent', () => {
-  let component: CurrentDecayComponent;
-  let fixture: ComponentFixture<CurrentDecayComponent>;
+describe('StatisticalDataComponent', () => {
+  let component: StatisticalDataComponent;
+  let fixture: ComponentFixture<StatisticalDataComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CurrentDecayComponent ]
+      declarations: [ StatisticalDataComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CurrentDecayComponent);
+    fixture = TestBed.createComponent(StatisticalDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
