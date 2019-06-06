@@ -2,6 +2,8 @@ package com.epaxera.zpiserver;
 
 import com.epaxera.zpiserver.services.SessionService;
 import com.epaxera.zpiserver.services.SessionServiceImpl;
+import com.epaxera.zpiserver.services.StatisticalDataService;
+import com.epaxera.zpiserver.services.StatisticalDataServiceImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,6 +25,11 @@ public class ZpiServerApplication {
 	@Bean
 	public SessionService sessionService() {
 		return new SessionServiceImpl(restTemplate());
+	}
+
+	@Bean
+	public StatisticalDataService statisticalDataService() {
+		return new StatisticalDataServiceImpl(restTemplate());
 	}
 
 }
