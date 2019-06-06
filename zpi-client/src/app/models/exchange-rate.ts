@@ -1,4 +1,4 @@
-import { Rate } from '../Rate';
+import {Rate} from "./rate";
 
 export class ExchangeRate {
   table: string;
