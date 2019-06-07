@@ -4,6 +4,7 @@ import {HttpHeaders , HttpClient} from '@angular/common/http';
 import {catchError} from 'rxjs/operators/catchError';
 import {ExchangeRate} from '../models/exchange-rate';
 import { tap, map } from 'rxjs/operators';
+import {of} from "rxjs";
 
 const httpOptions = {
   header: new HttpHeaders({
@@ -21,11 +22,6 @@ export class SessionService {
   constructor(private http: HttpClient) {
   }
 
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
- }
-
   getLastQuotationOfTheAverageExchangeRate(currency: string, day: string): Observable<ExchangeRate[]> {
     return this.http.get<ExchangeRate[]>(`${this.basicUrl}/${currency}/${day}`)
       .pipe(
@@ -33,4 +29,13 @@ export class SessionService {
         catchError(this.handleError<ExchangeRate[]>(`getLastQuotationOfTheAverageExchangeRate currency=${currency} day=${day}`, []))
       );
   }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      console.log(`${operation} failed: ${error.message}`);
+      return of(result as T);
+    };
+  }
+
 }
