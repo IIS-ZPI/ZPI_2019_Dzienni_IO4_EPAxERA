@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CurrencyDecayComponent } from './components/currency-decay/currency-decay.component';
 import { SessionsComponent } from './components/sessions/sessions.component';
 import { StatisticalDataComponent } from './components/statistical-data/statistical-data.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { StatisticalDataComponent } from './components/statistical-data/statisti
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [],
