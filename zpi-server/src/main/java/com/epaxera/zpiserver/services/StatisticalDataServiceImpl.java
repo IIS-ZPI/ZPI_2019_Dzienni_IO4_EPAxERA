@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -21,7 +23,8 @@ public class StatisticalDataServiceImpl implements StatisticalDataService {
         this.restTemplate = restTemplate;
     }
 
-    @Override public Double getMedianOfChosenCurrencyForTimeSpecifiedInDayParameter(String currency, String day) {
+    @Override
+    public Double getMedianOfChosenCurrencyForTimeSpecifiedInDayParameter(String currency, String day) {
         ExchangeRate result = restTemplate.getForObject(
                 "http://api.nbp.pl/api/exchangerates/rates/a/" + currency + "/last/" + day + "/?format=json", ExchangeRate.class, currency,
                 day);
@@ -29,18 +32,18 @@ public class StatisticalDataServiceImpl implements StatisticalDataService {
         List<Double> midFromRates = convertMidDataToDouble(result.getRates());
 
         double median;
-
+        Collections.sort(midFromRates);
         if (midFromRates.size() % 2 == 0) {
             median = (midFromRates.get(midFromRates.size() / 2) + midFromRates.get(midFromRates.size() / 2 - 1)) / 2;
-        }
-        else {
+        } else {
             median = midFromRates.get(midFromRates.size() / 2);
         }
 
         return median;
     }
 
-    @Override public Double getStandardDeviationOfChosenCurrencyForTimeSpecifiedInDayParameter(String currency, String day) {
+    @Override
+    public Double getStandardDeviationOfChosenCurrencyForTimeSpecifiedInDayParameter(String currency, String day) {
         ExchangeRate result = restTemplate.getForObject(
                 "http://api.nbp.pl/api/exchangerates/rates/a/" + currency + "/last/" + day + "/?format=json", ExchangeRate.class, currency,
                 day);
@@ -54,7 +57,8 @@ public class StatisticalDataServiceImpl implements StatisticalDataService {
         return standardDeviation.evaluate(smallDouble);
     }
 
-    @Override public Double getDominantOfChosenCurrencyForTimeSpecifiedInDayParameter(String currency, String day) {
+    @Override
+    public Double getDominantOfChosenCurrencyForTimeSpecifiedInDayParameter(String currency, String day) {
         ExchangeRate result = restTemplate.getForObject(
                 "http://api.nbp.pl/api/exchangerates/rates/a/" + currency + "/last/" + day + "/?format=json", ExchangeRate.class, currency,
                 day);
@@ -80,13 +84,23 @@ public class StatisticalDataServiceImpl implements StatisticalDataService {
         return dominant;
     }
 
-    // TODO: Gitner - have no idea how to implement it
-    @Override public Double getVariationOfChosenCurrencyForTimeSpecifiedInDayParameter(String currency, String day) {
+    @Override
+    public Double getVariationOfChosenCurrencyForTimeSpecifiedInDayParameter(String currency, String day) {
         ExchangeRate result = restTemplate.getForObject(
                 "http://api.nbp.pl/api/exchangerates/rates/a/" + currency + "/last/" + day + "/?format=json", ExchangeRate.class, currency,
                 day);
 
-        return null;
+        List<Double> midFromRates = convertMidDataToDouble(result.getRates());
+        Double[] array = midFromRates.toArray(new Double[midFromRates.size()]);
+        double[] smallDouble = ArrayUtils.toPrimitive(array);
+        double sum = 0;
+        StandardDeviation standardDeviation = new StandardDeviation();
+
+        for (int i = 0; i < midFromRates.size(); i++) {
+            sum = sum + midFromRates.get(i);
+        }
+
+        return standardDeviation.evaluate(smallDouble)/(sum/midFromRates.size());
     }
 
     private List<Double> convertMidDataToDouble(List<Rate> rates) {
